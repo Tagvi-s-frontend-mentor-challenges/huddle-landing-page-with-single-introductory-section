@@ -3,6 +3,16 @@ $font-header: "Poppins", sans-serif;
 $font-body: "Open Sans", sans-serif;
 $violet: hsl(257, 40%, 49%);
 $magenta: hsl(300, 69%, 71%);
+@mixin lg {
+  @media screen and (min-width: 1000px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media screen and (min-width: 1500px) {
+    @content;
+  }
+}
 *,
 *::before,
 *::after {
@@ -10,15 +20,29 @@ $magenta: hsl(300, 69%, 71%);
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  font-size: 16px;
+  @include lg {
+    font-size: 20px;
+  }
+  @include xl {
+    font-size: 24px;
+  }
+}
+::selection {
+  color: white;
+  background-color: $magenta;
+}
 body {
-  padding: 10vw;
+  padding: 5vh 5vw;
   background-color: $violet;
   font-family: $font-body;
+  min-height: 100vh;
 }
 picture img {
   display: block;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
@@ -28,6 +52,9 @@ nav {
   img {
     width: 150px;
     display: block;
+    @include lg {
+      width: 200px;
+    }
   }
 }
 main {
@@ -36,6 +63,20 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include lg {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include lg {
+      align-items: flex-start;
+    }
+  }
   h1 {
     font-family: $font-header;
     font-size: 1.5rem;
@@ -43,20 +84,24 @@ main {
   }
   p {
     margin: 20px 0;
-    max-width: 35ch;
+    max-width: 50ch;
     font-size: 0.9rem;
   }
   button {
     border: none;
     background-color: white;
     color: $violet;
-    padding: 10px 60px;
+    padding: 0.6rem 3rem;
     border-radius: 30px;
     cursor: pointer;
   }
   img {
     width: 100%;
     margin-bottom: 50px;
+    max-width: 800px;
+    @include lg {
+      margin-bottom: 0;
+    }
   }
 }
 footer {
@@ -69,6 +114,9 @@ footer {
   * {
     border: 2px solid white;
     border-radius: 50%;
-    padding: 5px;
+    padding: 10px;
+  }
+  @include lg {
+    justify-content: flex-end;
   }
 }

@@ -7,16 +7,36 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 16px;
+}
+@media screen and (min-width: 1000px) {
+  :root {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  :root {
+    font-size: 24px;
+  }
+}
+
+::selection {
+  color: white;
+  background-color: #e882e8;
+}
+
 body {
-  padding: 10vw;
+  padding: 5vh 5vw;
   background-color: #674baf;
   font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
 }
 
 picture img {
   display: block;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
@@ -29,6 +49,11 @@ nav img {
   width: 150px;
   display: block;
 }
+@media screen and (min-width: 1000px) {
+  nav img {
+    width: 200px;
+  }
+}
 
 main {
   text-align: center;
@@ -37,6 +62,24 @@ main {
   flex-direction: column;
   align-items: center;
 }
+@media screen and (min-width: 1000px) {
+  main {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    gap: 50px;
+  }
+}
+main div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1000px) {
+  main div {
+    align-items: flex-start;
+  }
+}
 main h1 {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
@@ -44,20 +87,26 @@ main h1 {
 }
 main p {
   margin: 20px 0;
-  max-width: 35ch;
+  max-width: 50ch;
   font-size: 0.9rem;
 }
 main button {
   border: none;
   background-color: white;
   color: #674baf;
-  padding: 10px 60px;
+  padding: 0.6rem 3rem;
   border-radius: 30px;
   cursor: pointer;
 }
 main img {
   width: 100%;
   margin-bottom: 50px;
+  max-width: 800px;
+}
+@media screen and (min-width: 1000px) {
+  main img {
+    margin-bottom: 0;
+  }
 }
 
 footer {
@@ -71,7 +120,12 @@ footer {
 footer * {
   border: 2px solid white;
   border-radius: 50%;
-  padding: 5px;
+  padding: 10px;
+}
+@media screen and (min-width: 1000px) {
+  footer {
+    justify-content: flex-end;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
