@@ -94,6 +94,11 @@ main {
     padding: 0.6rem 3rem;
     border-radius: 30px;
     cursor: pointer;
+    transition: all 0.2s ease-out;
+    &:hover {
+      background-color: $magenta;
+      color: white;
+    }
   }
   img {
     width: 100%;
@@ -115,6 +120,11 @@ footer {
     border: 2px solid white;
     border-radius: 50%;
     padding: 10px;
+    &:hover {
+      color: $magenta;
+      transition: all 0.2s ease-out;
+      border-color: $magenta;
+    }
   }
   @include lg {
     justify-content: flex-end;

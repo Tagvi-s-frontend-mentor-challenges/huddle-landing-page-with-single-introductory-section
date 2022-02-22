@@ -97,6 +97,11 @@ main button {
   padding: 0.6rem 3rem;
   border-radius: 30px;
   cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+main button:hover {
+  background-color: #e882e8;
+  color: white;
 }
 main img {
   width: 100%;
@@ -121,6 +126,11 @@ footer * {
   border: 2px solid white;
   border-radius: 50%;
   padding: 10px;
+}
+footer *:hover {
+  color: #e882e8;
+  transition: all 0.2s ease-out;
+  border-color: #e882e8;
 }
 @media screen and (min-width: 1000px) {
   footer {
